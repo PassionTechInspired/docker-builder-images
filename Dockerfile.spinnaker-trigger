@@ -6,5 +6,3 @@ RUN apk add git && \
     pip install requests
 
 COPY spinnaker-trigger.py ./
-
-CMD ["python", "spinnaker-trigger.py"]
