@@ -7,6 +7,6 @@ apk add git
 # Install requests
 pip install requests
 
-COPY kaniko-build.py ./
+COPY spinnaker-trigger.py ./
 
-CMD ["python", "kaniko-build.py"]
+CMD ["python", "spinnaker-trigger.py"]
