@@ -1,11 +1,9 @@
 FROM python:3.8-alpine
 WORKDIR /app/
 
-# Install git
-apk add git
-
-# Install requests
-pip install requests
+# Install git & requests
+RUN apk add git && \
+    pip install requests
 
 COPY spinnaker-trigger.py ./
 
