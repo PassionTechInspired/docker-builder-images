@@ -6,9 +6,9 @@ RUN apt update && \
     apt install curl -y
     
 # Install Helm
-RUN curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - && \
+RUN curl https://baltocdn.com/helm/signing.asc | apt-key add - && \
     apt install apt-transport-https --yes && \
-    echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list && \
+    echo "deb https://baltocdn.com/helm/stable/debian/ all main" | tee /etc/apt/sources.list.d/helm-stable-debian.list && \
     apt update && \
     apt install helm
 
