@@ -6,12 +6,9 @@ tag = os.environ['CI_COMMIT_SHORT_SHA']
 project = os.environ['CI_PROJECT_NAME']
 endpoint = os.environ['ENDPOINT']
 
-print("Tag:")
-print(tag)
-print("Project:")
-print(project)
-print("Endpoint:")
-print(endpoint)
+print("Endpoint: " + endpoint)
+print("Project: " + project)
+print("Tag: " + tag)
 
 body = json.dumps({
         "parameters": {
@@ -24,4 +21,6 @@ r = requests.Session()
 r.headers.update({'content-type': 'application/json'})
 
 response = r.post(url=endpoint, data=body)
+
+print("Response from Spinnaker:")
 print(response.json())
